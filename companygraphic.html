@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.min.css?_v=20220219234554">
+</head>
+<body>
+
+        
+    <header class="header">
+    <nav>
+        <ul class="nav__list">
+            <li><a href="index.html">Список твитов</a></li>
+            <li><a href="reviews.html">График отзывов</a></li>
+            <li><a href="companygraphic.html">График Авиакомпании</a></li>
+        </ul>
+    </nav>
+</header>
+    
+    <div class="container">
+      <form>
+  
+       <div class="graphic-btns d-flex">
+        <a href="#graphic_1" class="btn-item">
+            <h3>American</h3>
+        </a>
+  
+          <a href="#graphic_2" class="btn-item">
+            <h3>Delta</h3>
+          </a>
+          
+          <a href="#graphic_3" class="btn-item">
+            <h3>Southwest</h3>
+          </a>
+          <a href="#graphic_4" class="btn-item">
+            <h3>United</h3>
+          </a>
+          <a href="#graphic_5" class="btn-item">
+            <h3>US Airways</h3>
+          </a>
+          <a href="#graphic_6" class="btn-item">
+            <h3>Virgin America</h3>
+          </a>
+      </div>
+       
+
+
+        
+      </form>
+  
+          <div id="graphic_1" class="graphic">
+              <canvas id="myChart"></canvas>
+          </div>
+  
+          <div id="graphic_2" class="graphic">
+            <canvas id="myChart2"></canvas>
+          </div>
+  
+          <div id="graphic_3" class="graphic">
+            <canvas id="myChart3"></canvas>
+          </div>
+          <div id="graphic_4" class="graphic">
+            <canvas id="myChart4"></canvas>
+        </div>
+
+        <div id="graphic_5" class="graphic">
+          <canvas id="myChart5"></canvas>
+        </div>
+
+        <div id="graphic_6" class="graphic">
+          <canvas id="myChart6"></canvas>
+        </div>
+      </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js?_v=20220219234554"></script>
+
+
+    <script>
+      const data = {
+  labels: [
+    "Bad Flight",
+    "Cancelled Flight",
+    "Can't Tell",
+    "Customer Service Issue",
+    "Damaged Luggage",
+    "Flight Attendant Complaints",
+    "Flight Booking Problems",
+    "Late Flight",
+    "longlines",
+    "Lost Luggage"
+  ],
+  
+  datasets: [{
+    type: 'bar',
+    label: 'Bar Dataset',
+    data: [42, 186, 154, 425, 13, 56, 324, 45, 520, 152],
+    borderColor: 'rgb(255, 99, 132)',
+    backgroundColor: 'red'
+  }, ]};
+      
+  const config = {
+  type: 'scatter',
+  data: data,
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+};
+
+  const data2 = {
+    labels: [
+    "Bad Flight",
+    "Cancelled Flight",
+    "Can't Tell",
+    "Customer Service Issue",
+    "Damaged Luggage",
+    "Flight Attendant Complaints",
+    "Flight Booking Problems",
+    "Late Flight",
+    "longlines",
+    "Lost Luggage"
+  ],
+  datasets: [{
+    type: 'bar',
+    label: 'Bar Dataset',
+    data: [52, 218, 114, 925, 41, 42, 376, 35, 430, 177],
+    borderColor: 'rgb(255, 99, 132)',
+    backgroundColor: 'yellow'
+  }, ]};
+
+
+  const config2 = {
+  type: 'scatter',
+  data: data2,
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+};
+
+  const data3 = {
+    labels: [
+    "Bad Flight",
+    "Cancelled Flight",
+    "Can't Tell",
+    "Customer Service Issue",
+    "Damaged Luggage",
+    "Flight Attendant Complaints",
+    "Flight Booking Problems",
+    "Late Flight",
+    "longlines",
+    "Lost Luggage"
+  ],
+  datasets: [{
+    type: 'bar',
+    label: 'Bar Dataset',
+    data: [24, 425, 241, 670, 78, 12, 340, 52, 564, 57],
+    borderColor: 'rgb(255, 99, 132)',
+    backgroundColor: 'green'
+  }, ]};
+
+  const config3 = {
+  type: 'scatter',
+  data: data3,
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+};
+
+  const data4 = {
+    labels: [
+    "Bad Flight",
+    "Cancelled Flight",
+    "Can't Tell",
+    "Customer Service Issue",
+    "Damaged Luggage",
+    "Flight Attendant Complaints",
+    "Flight Booking Problems",
+    "Late Flight",
+    "longlines",
+    "Lost Luggage"
+  ],
+  datasets: [{
+    type: 'bar',
+    label: 'Bar Dataset',
+    data: [27, 525, 142, 562, 74, 71, 242, 34, 344, 32],
+    borderColor: 'rgb(255, 99, 132)',
+    backgroundColor: 'lime'
+  }, ]};
+
+  const config4 = {
+  type: 'scatter',
+  data: data4,
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+};
+
+  const data5 = {
+    labels: [
+    "Bad Flight",
+    "Cancelled Flight",
+    "Can't Tell",
+    "Customer Service Issue",
+    "Damaged Luggage",
+    "Flight Attendant Complaints",
+    "Flight Booking Problems",
+    "Late Flight",
+    "longlines",
+    "Lost Luggage"
+  ],
+  datasets: [{
+    type: 'bar',
+    label: 'Bar Dataset',
+    data: [57, 235, 151, 632, 52, 89, 253, 12, 512, 66],
+    borderColor: 'rgb(255, 99, 132)',
+    backgroundColor: 'grey'
+  }, ]};
+
+  const config5 = {
+  type: 'scatter',
+  data: data5,
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+};
+
+  const data6 = {
+    labels: [
+    "Bad Flight",
+    "Cancelled Flight",
+    "Can't Tell",
+    "Customer Service Issue",
+    "Damaged Luggage",
+    "Flight Attendant Complaints",
+    "Flight Booking Problems",
+    "Late Flight",
+    "longlines",
+    "Lost Luggage"
+  ],
+  datasets: [{
+    type: 'bar',
+    label: 'Bar Dataset',
+    data: [45, 281, 351, 564, 272, 232, 23, 50, 102, 62],
+    borderColor: 'rgb(255, 99, 132)',
+    backgroundColor: 'blue'
+  }, ]};
+
+const config6 = {
+  type: 'scatter',
+  data: data6,
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+};
+    </script>
+    
+    <script>
+      const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+      );
+      const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+      );
+      const myChart3 = new Chart(
+        document.getElementById('myChart3'),
+        config3
+      );
+      const myChart4 = new Chart(
+        document.getElementById('myChart4'),
+        config4
+      );
+      const myChart5 = new Chart(
+        document.getElementById('myChart5'),
+        config5
+      );
+      const myChart6 = new Chart(
+        document.getElementById('myChart6'),
+        config6
+      );
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.min.css?_v=20220219234554">
+</head>
+<body>
+    <header class="header">
+    <nav>
+        <ul class="nav__list">
+            <li><a href="index.html">Список твитов</a></li>
+            <li><a href="reviews.html">График отзывов</a></li>
+            <li><a href="companygraphic.html">График Авиакомпании</a></li>
+        </ul>
+    </nav>
+</header>
+    <div class="container">
+    <form>
+
+     <div class="graphic-btns">
+      <a href="#graphic_1" class="btn-item">
+          <h3>показать все отзывы</h3>
+      </a>
+
+        <a href="#graphic_2" class="btn-item">
+          <h3>показать только отрицательные отзывы</h3>
+        </a>
+        
+        <a href="#graphic_3" class="btn-item">
+          <h3>показать только положительные отзывы</h3>
+        </a>
+     </div>
+      
+    </form>
+
+        <div id="graphic_1" class="graphic active">
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <div id="graphic_2" class="graphic">
+          <canvas id="myChart2"></canvas>
+        </div>
+
+        <div id="graphic_3" class="graphic">
+          <canvas id="myChart3"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js?_v=20220219234554"></script>
+    
+
+
+    <script>
+        const data = {
+           labels: [
+           'American',
+          'Delta',
+          'Southwest',
+          'United',
+          'US Airways',
+          'Virgin America',
+           ],
+          datasets: [{
+            type: 'bar',
+            label: 'Все отзывы компаний',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [2759, 2222, 2420, 3822, 2913, 504],
+          }]
+        };
+      
+        const mainconfig = {
+          type: 'scatter',
+          data: data,
+          options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+};
+
+
+
+// myChart2
+        const secondlabels = [
+          'American',
+          'Delta',
+          'Southwest',
+          'United',
+          'US Airways',
+          'Virgin America',
+        ];
+      
+        const seconddata = {
+          labels: secondlabels,
+          datasets: [{
+            type: 'bar',
+            label: 'Отрицательные отзывы компаний',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [1738, 1400, 1524, 2408, 1835, 318],
+          }]
+        };
+      
+        const secondconfig = {
+          type: 'scatter',
+          data: seconddata,
+          options: {}
+        };
+
+// myChart3
+        const thirdlabels = [
+          'American',
+          'Delta',
+          'Southwest',
+          'United',
+          'US Airways',
+          'Virgin America',
+        ];
+      
+        const thirddata = {
+          labels: thirdlabels,
+          datasets: [{
+            type: 'bar',
+            label: 'Положительные отзывы компаний',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [441, 355, 387, 612, 466, 81],
+          }]
+        };
+      
+        const thirdconfig = {
+          type: 'scatter',
+          data: thirddata,
+          options: {}
+        };
+
+
+
+ </script>
+
+
+<script>
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      mainconfig
+    );
+
+    const myChart2 = new Chart(
+      document.getElementById('myChart2'),
+      secondconfig
+    );
+
+    const myChart3 = new Chart(
+      document.getElementById('myChart3'),
+      thirdconfig
+    );
+</script>
+</body>
+</html>
